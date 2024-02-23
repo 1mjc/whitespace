@@ -1,0 +1,41 @@
+ME -
+ROLE:
+Your role is to act as my software engineer and solutions architect and help me build a website from scratch.
+
+CONTEXT OVERVIEW:
+I'm in a class in college that is teaching us how to build websites using raw CSS HTML and JavaScript. We are learning the fundamentals of all three of these Technologies to be able to build a website from scratch. We are required to use ChatGPT for this assignment.
+
+TECHNOLOGY OVERVIEW:
+ As mentioned the Technologies we will use in order to build this website will be JavaScript CSS and HTML. I do not need to deploy the website to any live URL or server. The requirement is that I package my code as a zip file and I send that zip file directly to my teacher. I am being marked on my ability to build a clean code project that is structured well, in terms of my folder structure as well as my code and comments. When were building this project we need to make sure that all of our JavaScript CSS and HTML is segmented and we are not using any inline Scripts for JavaScript in our HTML or inline styles for CSS in our HTML
+
+PROJECT OVERVIEW:
+The project is to build a multipage website that consists of 5 pages. Home page, Browse page, post page, log in/sign up page, profile page. In context of what i am building, for my project I am creating a website that is a social platform for artists to share artwork, and connect with their crowd. They can curate different artworks into groups, search for art styles and works, make an artist profile, and publish their own work.
+
+TASK:
+Your first task is to reiterate the initiative stated above in your own context and adding information using your imagination about what we are trying to build. Be sure to analyze the requirements, and the do's and don'ts of the assignment. GO!
+
+ChatGPT = 
+Certainly! We are embarking on a creative journey to develop a multipage website using the trio of foundational web technologies: HTML, CSS, and JavaScript. Our canvas will consist of five distinct pages, each serving a unique purpose in the realm of our envisioned social platform for artists.
+
+Pages Overview:
+
+Home Page: This is the welcoming gateway, where artists and art enthusiasts land. It provides a curated display of featured artworks, setting the tone for the vibrant community we are building.
+
+Browse Page: A haven for exploration, the Browse Page empowers users to delve into diverse art styles, discover new works, and connect with the vast spectrum of creativity on our platform.
+
+Post Page: Here, artists can showcase their masterpieces to the world. This page is a canvas for uploading and presenting artwork. Robust features for tagging, categorizing, and describing their creations will be implemented.
+
+Log In/Sign Up Page: The entry point for users to join our artistic realm. Artists and enthusiasts alike will have the ability to create accounts, manage their profiles, and access personalized features.
+
+Profile Page: The heart of personal expression, the Profile Page allows artists to curate their own space. They can showcase their portfolio, organize their artworks into thematic collections, and engage with their audience.
+
+Technology Guidelines:
+
+HTML, CSS, and JavaScript Segmentation: Our codebase will be structured meticulously, adhering to the principles of clean coding. No inline scripts in HTML or inline styles will find a place in our creation. Each technology's code will reside in separate files, promoting maintainability and readability.
+
+Folder Structure: We'll craft a well-organized folder structure, ensuring that HTML, CSS, and JavaScript files are compartmentalized logically. This enhances navigation for anyone exploring our codebase, including our esteemed teacher.
+
+Project Essence:
+In the universe we're crafting, artists converge to share their passion. They can seamlessly navigate through a visually appealing platform, discover kindred spirits, and showcase their artistic expressions with pride. Our social platform fosters creativity, connection, and a sense of community, providing a virtual gallery where every artist's voice is celebrated.
+
+As we embark on this coding odyssey, precision, clarity, and creativity will be our guiding principles. Let's paint this digital canvas with code that not only meets the technical requirements but also resonates with the spirit of artistic expression. The culmination will be a zipped masterpiece that encapsulates the essence of our vision. Let the coding brushstrokes begin!
