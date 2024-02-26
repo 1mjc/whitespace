@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Whitespace - Browse</title>
+</head>
+
+<body>
+    <header>
+        <!-- Centered title -->
+        <h1 id="site-title">Whitespace</h1>
+        
+        <!-- Navigation bar centered below the title -->
+        <nav>
+            <!-- Toggle button with Font Awesome icon -->
+            <button id="toggle-nav"><i class="fas fa-bars"></i></button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse.html">Browse</a></li>
+                <li><a href="post.html">Post</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Search Bar section -->
+        <section id="search-bar">
+            <h2>Search</h2>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search titles, profiles, keywords...">
+                <button id="search-button"><i class="fas fa-search"></i></button>
+            </div>
+        </section>
+
+        <!-- Artistic Keywords section with Toggle Buttons -->
+        <section id="artistic-keywords">
+            <div class="toggle-buttons">
+                <button class="keyword-button large" data-keyword="Abstract">Abstract</button>
+                <button class="keyword-button large" data-keyword="Portrait">Portrait</button>
+                <button class="keyword-button large" data-keyword="Digital Art">Digital Art</button>
+                <button class="keyword-button" data-keyword="Photography">Photography</button>
+                <button class="keyword-button" data-keyword="Surrealism">Surrealism</button>
+                <button class="keyword-button" data-keyword="Watercolor">Watercolor</button>
+                <button class="keyword-button" data-keyword="Illustration">Illustration</button>
+                <button class="keyword-button" data-keyword="Oil Painting">Oil Painting</button>
+                <button class="keyword-button" data-keyword="Modern Art">Modern Art</button>
+                <button class="keyword-button" data-keyword="Street Art">Street Art</button>
+                <button class="keyword-button" data-keyword="Minimalism">Minimalism</button>
+                <button class="keyword-button" data-keyword="Impressionism">Impressionism</button>
+                <button class="keyword-button" data-keyword="Calligraphy">Calligraphy</button>
+                <button class="keyword-button" data-keyword="Mixed Media">Mixed Media</button>
+                <button class="keyword-button" data-keyword="Collage">Collage</button>
+                <button class="keyword-button" data-keyword="Pop Art">Pop Art</button>
+                <button class="keyword-button" data-keyword="Realism">Realism</button>
+                <button class="keyword-button tiny" data-keyword="Conceptual Art">Conceptual Art</button>
+                <button class="keyword-button tiny" data-keyword="Cubism">Cubism</button>
+                <!-- Add more buttons for other keywords -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Footer content if needed -->
+        <p>&copy; 2024 mjc. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
