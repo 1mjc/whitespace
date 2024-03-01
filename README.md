@@ -1,3 +1,4 @@
+Whitespace open source files.
 Whitespace social was created by mjc entirely using ChatGPT.
  .-.-.  .-.-.  .-.-.  .-.-.  .-.-.  .-.-.  .-.-.  .-.-.  .-.-.
 Conversation:
