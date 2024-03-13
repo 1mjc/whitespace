@@ -1,0 +1,275 @@
+/* styles.css */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    max-width: 80%;
+    margin: 20px auto;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+header {
+    text-align: center;
+    background-color: #f2f2f2;
+    color: #333;
+    padding: 1em;
+    width: 100%;
+}
+
+#site-title {
+    font-size: 2em;
+}
+
+nav ul {
+    list-style-type: none;
+    margin-top: 10px;
+    display: none;
+}
+
+#toggle-nav {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+}
+
+nav.active ul {
+    display: block;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+#featured {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f2f2f2;
+    color: #333;
+    font-size: x-small;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Artistic Keywords section */
+#artistic-keywords {
+    text-align: center;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Style checkboxes */
+input[type="checkbox"] {
+    margin: 0;
+}
+
+/* Search Bar section */
+#search-bar {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+#search-input {
+    width: 300px;
+    padding: 10px;
+}
+
+#search-button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #555;
+}
+
+/* Browse Page specific styles */
+#artwork-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+#artwork-gallery img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.keyword-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.keyword-button.very-large {
+    padding: 16px 32px;
+    font-size: 24px;
+}
+
+.keyword-button.large {
+    padding: 14px 28px;
+    font-size: 20px;
+}
+
+.keyword-button.medium {
+    padding: 12px 24px;
+    font-size: 16px;
+}
+
+.keyword-button.small {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.keyword-button.tiny {
+    padding: 8px 16px;
+    font-size: 12px;
+}
+
+.keyword-button:hover {
+    background-color: #2980b9;
+}
+
+.keyword-button.selected {
+    background-color: #2980b9;
+    color: #fff;
+}
+
+/* Post Page specific styles */
+#post-form {
+    text-align: center;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form input,
+form textarea,
+form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.icon-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 20px;
+    transition: background-color 0.3s;
+}
+
+.icon-button:hover {
+    background-color: #555;
+}
+
+/* Profile Page specific styles */
+#user-profile {
+    text-align: center;
+    color: #333;
+}
+
+#user-profile h2 {
+    margin-bottom: 20px;
+}
+
+#login-signup {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+.form-container {
+    display: none;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.center-input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.buttons-container {
+    margin-top: 15px;
+}
+
+.form-container.active {
+    display: block;
+}
+
+#show-login,
+#show-signup {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+}
