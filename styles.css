@@ -4,6 +4,10 @@ body, h1, h2, h3, p, ul {
     padding: 0;
 }
 
+main {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f2f2f2;
@@ -12,7 +16,11 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    overflow-x: hidden;
 }
+
+/* TITLE AND NAV MENU */
+/* ========================================================================================== */
 
 header {
     text-align: center;
@@ -51,6 +59,8 @@ nav ul li {
     margin-right: 20px;
 }
 
+/***************************************HOME PAGE********************************************/
+
 main {
     max-width: 800px;
     margin: 20px auto;
@@ -58,48 +68,35 @@ main {
     text-align: center;
 }
 
-#featured {
+/* FEATURED CONTENT (SECTIONS, GRIDS) */
+/* ========================================================================================== */
+
+#featured-content {
     text-align: center;
+    display: flex;
+    float: center;
 }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #f2f2f2;
-    color: #333;
-    font-size: x-small;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+.content_box {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #333; 
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px;
+    height: auto;
+    width: auto;
 }
 
-/* Artistic Keywords section */
-#artistic-keywords {
-    text-align: center;
-    margin-top: 20px;
-}
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
+/* END OF FEATURED CONTENT (SECTIONS, GRIDS) */
+/* ========================================================================================== */
 
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
+/* END OF HOME PAGE */
+/* ******************************************************************************************** */
 
-th {
-    background-color: #f2f2f2;
-}
-
-/* Style checkboxes */
-input[type="checkbox"] {
-    margin: 0;
-}
-
-/* Search Bar section */
+/* BROWSE PAGE */
+/* SEARCH BAR */
 #search-bar {
     text-align: center;
     margin-top: 20px;
@@ -122,19 +119,32 @@ input[type="checkbox"] {
 #search-button:hover {
     background-color: #555;
 }
+/* ================================== */
 
-/* Browse Page specific styles */
-#artwork-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
+/* KEYWORDS */
+#artistic-keywords {
+    text-align: center;
+    margin-top: 20px;
 }
 
-#artwork-gallery img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+
+input[type="checkbox"] {
+    margin: 0;
 }
 
 .toggle-buttons {
@@ -185,8 +195,13 @@ input[type="checkbox"] {
     background-color: #2980b9;
     color: #fff;
 }
+/* ===================================== */
 
-/* Post Page specific styles */
+/* END OF BROWSE PAGE */
+/* ******************************************************************************************** */
+
+
+/* POST PAGE */
 #post-form {
     text-align: center;
 }
@@ -219,8 +234,11 @@ form button {
 .icon-button:hover {
     background-color: #555;
 }
+/* END OF POST PAGE */
+/* ****************************************************************************************** */
 
-/* Profile Page specific styles */
+
+/* PROFILE PAGE */
 #user-profile {
     text-align: center;
     color: #333;
@@ -266,4 +284,17 @@ form button {
     padding: 10px;
     cursor: pointer;
     margin-right: 10px;
+}
+/* END OF PROFILE PAGE */
+/* ****************************************************************************************** */
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f2f2f2;
+    color: #333;
+    font-size: x-small;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
