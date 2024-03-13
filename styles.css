@@ -74,7 +74,10 @@ main {
 #featured-content {
     text-align: center;
     display: flex;
-    float: center;
+    flex-direction: row;
+    align-items: center; /* Center the content horizontally */
+    justify-content: center; /* Center the content vertically */
+   
 }
 
 .content_box {
