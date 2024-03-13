@@ -1,0 +1,1853 @@
+
+
+User
+Can you make this website responsive? I want the horizontal scroll bar to be gone, and I want all the content to transform when you resize the window. And make three different css files for mobile, tablet, and desktop.
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Whitespace - Home</title>
+</head>
+
+<body>
+    <header>
+        <!-- Centered title -->
+        <h1 id="site-title">Whitespace</h1>
+        
+        <!-- Navigation bar centered below the title -->
+        <nav>
+            <!-- Toggle button with Font Awesome icon -->
+            <button id="toggle-nav"><i class="fas fa-bars"></i></button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse.html">Browse</a></li>
+                <li><a href="post.html">Post</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Featured artworks or other content for the Home Page -->
+        <section id="featured">
+            <h2>Welcome</h2>
+            <!--Add slogan-->
+            <!-- Add featured artworks or any introductory content here -->
+            <section id="heat-this-week"> </section>
+            <section id="challenge-of-the-month"> </section>
+            <section id="for-charity"> </section>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Footer content if needed -->
+        <p>&copy; 2024 mjc. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+/* styles.css */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    background-color: #f2f2f2;
+    color: #333;
+    padding: 1em;
+    width: 100%;
+}
+
+#site-title {
+    font-size: 2em;
+}
+
+nav ul {
+    list-style-type: none;
+    margin-top: 10px;
+    display: none;
+}
+
+#toggle-nav {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+}
+
+nav.active ul {
+    display: block;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+#featured {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f2f2f2;
+    color: #333;
+    font-size: x-small;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Artistic Keywords section */
+#artistic-keywords {
+    text-align: center;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Style checkboxes */
+input[type="checkbox"] {
+    margin: 0;
+}
+
+/* Search Bar section */
+#search-bar {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+#search-input {
+    width: 300px;
+    padding: 10px;
+}
+
+#search-button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #555;
+}
+
+/* Browse Page specific styles */
+#artwork-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+#artwork-gallery img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.keyword-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.keyword-button.very-large {
+    padding: 16px 32px;
+    font-size: 24px;
+}
+
+.keyword-button.large {
+    padding: 14px 28px;
+    font-size: 20px;
+}
+
+.keyword-button.medium {
+    padding: 12px 24px;
+    font-size: 16px;
+}
+
+.keyword-button.small {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.keyword-button.tiny {
+    padding: 8px 16px;
+    font-size: 12px;
+}
+
+.keyword-button:hover {
+    background-color: #2980b9;
+}
+
+.keyword-button.selected {
+    background-color: #2980b9;
+    color: #fff;
+}
+
+/* Post Page specific styles */
+#post-form {
+    text-align: center;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form input,
+form textarea,
+form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.icon-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 20px;
+    transition: background-color 0.3s;
+}
+
+.icon-button:hover {
+    background-color: #555;
+}
+
+/* Profile Page specific styles */
+#user-profile {
+    text-align: center;
+    color: #333;
+}
+
+#user-profile h2 {
+    margin-bottom: 20px;
+}
+
+#login-signup {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+.form-container {
+    display: none;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.center-input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.buttons-container {
+    margin-top: 15px;
+}
+
+.form-container.active {
+    display: block;
+}
+
+#show-login,
+#show-signup {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+ChatGPT
+To make the website responsive and create different CSS files for mobile, tablet, and desktop, you can follow these steps:
+
+Create Separate CSS Files:
+Create three separate CSS files named styles-mobile.css, styles-tablet.css, and styles-desktop.css.
+Link these files in your HTML document accordingly.
+html
+Copy code
+<link rel="stylesheet" media="screen and (max-width: 600px)" href="styles-mobile.css">
+<link rel="stylesheet" media="screen and (min-width: 601px) and (max-width: 1024px)" href="styles-tablet.css">
+<link rel="stylesheet" media="screen and (min-width: 1025px)" href="styles-desktop.css">
+Modify the Styles in Each CSS File:
+Open each CSS file and adjust the styles according to the screen size.
+css
+Copy code
+/* styles-mobile.css */
+/* Add mobile-specific styles here */
+
+/* styles-tablet.css */
+/* Add tablet-specific styles here */
+
+/* styles-desktop.css */
+/* Add desktop-specific styles here */
+Adjust Existing Styles:
+Modify your existing styles.css file to remove the horizontal scrollbar and make the content responsive.
+css
+Copy code
+/* styles.css */
+body {
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+header {
+    /* Add styles for header */
+}
+
+nav ul {
+    /* Add styles for navigation */
+}
+
+main {
+    /* Add styles for main content */
+}
+
+#featured {
+    /* Add styles for featured content */
+}
+
+footer {
+    /* Add styles for footer */
+}
+
+/* Add other necessary styles for different sections */
+Responsive Design:
+Adjust specific styles for different screen sizes inside each separate CSS file. For example:
+css
+Copy code
+/* styles-mobile.css */
+main {
+    max-width: 100%;
+    margin: 10px;
+}
+
+/* styles-tablet.css */
+main {
+    max-width: 80%;
+    margin: 20px auto;
+}
+
+/* styles-desktop.css */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+}
+Remember to test your website on various devices and screen sizes to ensure it looks good and functions well across different platforms. Adjust the styles as needed based on your design preferences and requirements.
+
+User
+the horizontal scroll bar is still showing.
+thank you it works
+ChatGPT
+You're welcome! I'm glad to hear that it's working now. If you have any more questions or need further assistance with your website or anything else, feel free to ask. Happy coding!
+
+User
+Can you review my school assignment rubric and my code and tell me if i am missing any requirements, and tell me where to improve?
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" media="screen and (max-width: 600px)" href="mobile.css">
+    <link rel="stylesheet" media="screen and (min-width: 601px) and (max-width: 1024px)" href="tablet.css">
+    <link rel="stylesheet" media="screen and (min-width: 1025px)" href="desktop.css">
+    <title>Whitespace - Home</title>
+</head>
+
+<body>
+    <header>
+        <!-- Centered title -->
+        <h1 id="site-title">Whitespace</h1>
+        
+        <!-- Navigation bar centered below the title -->
+        <nav>
+            <!-- Toggle button with Font Awesome icon -->
+            <button id="toggle-nav"><i class="fas fa-bars"></i></button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse.html">Browse</a></li>
+                <li><a href="post.html">Post</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Featured artworks or other content for the Home Page -->
+        <section id="featured">
+            <h2>Welcome</h2>
+            <!--Add slogan-->
+            <!-- Add featured artworks or any introductory content here -->
+            <section id="heat-this-week"> </section>
+            <section id="challenge-of-the-month"> </section>
+            <section id="for-charity"> </section>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Footer content if needed -->
+        <p>&copy; 2024 mjc. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Whitespace - Browse</title>
+</head>
+
+<body>
+    <header>
+        <!-- Centered title -->
+        <h1 id="site-title">Whitespace</h1>
+        
+        <!-- Navigation bar centered below the title -->
+        <nav>
+            <!-- Toggle button with Font Awesome icon -->
+            <button id="toggle-nav"><i class="fas fa-bars"></i></button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse.html">Browse</a></li>
+                <li><a href="post.html">Post</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Search Bar section -->
+        <section id="search-bar">
+            <h2>Search</h2>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search titles, profiles, keywords...">
+                <button id="search-button"><i class="fas fa-search"></i></button>
+            </div>
+        </section>
+
+        <!-- Artistic Keywords section with Toggle Buttons -->
+        <section id="artistic-keywords">
+            <div class="toggle-buttons">
+                <button class="keyword-button large" data-keyword="Abstract">Abstract</button>
+                <button class="keyword-button large" data-keyword="Portrait">Portrait</button>
+                <button class="keyword-button large" data-keyword="Digital Art">Digital Art</button>
+                <button class="keyword-button" data-keyword="Photography">Photography</button>
+                <button class="keyword-button" data-keyword="Surrealism">Surrealism</button>
+                <button class="keyword-button" data-keyword="Watercolor">Watercolor</button>
+                <button class="keyword-button" data-keyword="Illustration">Illustration</button>
+                <button class="keyword-button" data-keyword="Oil Painting">Oil Painting</button>
+                <button class="keyword-button" data-keyword="Modern Art">Modern Art</button>
+                <button class="keyword-button" data-keyword="Street Art">Street Art</button>
+                <button class="keyword-button" data-keyword="Minimalism">Minimalism</button>
+                <button class="keyword-button" data-keyword="Impressionism">Impressionism</button>
+                <button class="keyword-button" data-keyword="Calligraphy">Calligraphy</button>
+                <button class="keyword-button" data-keyword="Mixed Media">Mixed Media</button>
+                <button class="keyword-button" data-keyword="Collage">Collage</button>
+                <button class="keyword-button" data-keyword="Pop Art">Pop Art</button>
+                <button class="keyword-button" data-keyword="Realism">Realism</button>
+                <button class="keyword-button tiny" data-keyword="Conceptual Art">Conceptual Art</button>
+                <button class="keyword-button tiny" data-keyword="Cubism">Cubism</button>
+                <!-- Add more buttons for other keywords -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Footer content if needed -->
+        <p>&copy; 2024 mjc. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <title>Whitespace - Post</title>
+</head>
+
+<body>
+    <header>
+        <!-- Centered title -->
+        <h1 id="site-title">Whitespace</h1>
+        
+        <!-- Navigation bar centered below the title -->
+        <nav>
+            <!-- Toggle button with Font Awesome icon -->
+            <button id="toggle-nav"><i class="fas fa-bars"></i></button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse.html">Browse</a></li>
+                <li><a href="post.html">Post</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Post</h2>
+        <h4 style="font-size: small;">Upload original art, images, videos, audio and writing.</h4>
+        <!-- Content for the Post Page -->
+        <section id="post-form">
+            <!-- Add form elements for posting artwork here -->
+            <button id="upload-media" class="icon-button">
+                <i class="fas fa-upload"></i>
+            </button>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Footer content if needed -->
+        <p>&copy; 2024 mjc. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Whitespace - Profile</title>
+</head>
+
+<body>
+    <header>
+        <!-- Centered title -->
+        <h1 id="site-title">Whitespace</h1>
+        
+        <!-- Navigation bar centered below the title -->
+        <nav>
+            <!-- Toggle button with Font Awesome icon -->
+            <button id="toggle-nav"><i class="fas fa-bars"></i></button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse.html">Browse</a></li>
+                <li><a href="post.html">Post</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- User profile section -->
+        <section id="user-profile">
+            <h2>User Profile</h2>
+            <!-- Add user profile information or edit options here -->
+        </section>
+
+        <!-- Login and Signup section -->
+        <section id="login-signup">
+            <h2>Login/Signup</h2>
+            <div id="login-form" class="form-container">
+                <h3>Login</h3>
+                <!-- Add login form elements here -->
+                <form>
+                    <!-- Add input fields for username, password, etc. -->
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="center-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" class="center-input">
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+
+            <div id="signup-form" class="form-container">
+                <h3>Signup</h3>
+                <!-- Add signup form elements here -->
+                <form>
+                    <!-- Add input fields for signup details -->
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" class="center-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" class="center-input">
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <div class="buttons-container">
+                <button id="show-login">Login</button>
+                <button id="show-signup">Sign Up</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Footer content if needed -->
+        <p>&copy; 2024 mjc. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
+    <script>
+        // Add JavaScript to toggle visibility of forms
+        document.addEventListener("DOMContentLoaded", function () {
+            const loginForm = document.getElementById("login-form");
+            const signupForm = document.getElementById("signup-form");
+
+            const showLoginFormButton = document.getElementById("show-login");
+            const showSignupFormButton = document.getElementById("show-signup");
+
+            showLoginFormButton.addEventListener("click", function () {
+                loginForm.style.display = "block";
+                signupForm.style.display = "none";
+            });
+
+            showSignupFormButton.addEventListener("click", function () {
+                loginForm.style.display = "none";
+                signupForm.style.display = "block";
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+/* styles.css */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+header {
+    text-align: center;
+    background-color: #f2f2f2;
+    color: #333;
+    padding: 1em;
+    width: 100%;
+}
+
+#site-title {
+    font-size: 2em;
+}
+
+nav ul {
+    list-style-type: none;
+    margin-top: 10px;
+    display: none;
+}
+
+#toggle-nav {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+}
+
+nav.active ul {
+    display: block;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+#featured {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f2f2f2;
+    color: #333;
+    font-size: x-small;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Artistic Keywords section */
+#artistic-keywords {
+    text-align: center;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Style checkboxes */
+input[type="checkbox"] {
+    margin: 0;
+}
+
+/* Search Bar section */
+#search-bar {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+#search-input {
+    width: 300px;
+    padding: 10px;
+}
+
+#search-button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #555;
+}
+
+/* Browse Page specific styles */
+#artwork-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+#artwork-gallery img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.keyword-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.keyword-button.very-large {
+    padding: 16px 32px;
+    font-size: 24px;
+}
+
+.keyword-button.large {
+    padding: 14px 28px;
+    font-size: 20px;
+}
+
+.keyword-button.medium {
+    padding: 12px 24px;
+    font-size: 16px;
+}
+
+.keyword-button.small {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.keyword-button.tiny {
+    padding: 8px 16px;
+    font-size: 12px;
+}
+
+.keyword-button:hover {
+    background-color: #2980b9;
+}
+
+.keyword-button.selected {
+    background-color: #2980b9;
+    color: #fff;
+}
+
+/* Post Page specific styles */
+#post-form {
+    text-align: center;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form input,
+form textarea,
+form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.icon-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 20px;
+    transition: background-color 0.3s;
+}
+
+.icon-button:hover {
+    background-color: #555;
+}
+
+/* Profile Page specific styles */
+#user-profile {
+    text-align: center;
+    color: #333;
+}
+
+#user-profile h2 {
+    margin-bottom: 20px;
+}
+
+#login-signup {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+.form-container {
+    display: none;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.center-input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.buttons-container {
+    margin-top: 15px;
+}
+
+.form-container.active {
+    display: block;
+}
+
+#show-login,
+#show-signup {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+// script.js
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleNavBtn = document.getElementById('toggle-nav');
+    const nav = document.querySelector('nav');
+
+    toggleNavBtn.addEventListener('click', function () {
+        nav.classList.toggle('active');
+    });
+
+    const keywordButtons = document.querySelectorAll('.keyword-button');
+
+    keywordButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            button.classList.toggle('selected');
+        });
+    });
+
+    const showLoginBtn = document.getElementById('show-login');
+    const showSignupBtn = document.getElementById('show-signup');
+    const loginForm = document.getElementById('login-form');
+    const signupForm = document.getElementById('signup-form');
+
+    showLoginBtn.addEventListener('click', function () {
+        loginForm.classList.add('active');
+        signupForm.classList.remove('active');
+    });
+
+    showSignupBtn.addEventListener('click', function () {
+        loginForm.classList.remove('active');
+        signupForm.classList.add('active');
+    });
+
+    document.getElementById('login-button').addEventListener('click', function () {
+        simulateAction('login');
+    });
+
+    document.getElementById('signup-button').addEventListener('click', function () {
+        simulateAction('signup');
+    });
+
+    function simulateAction(action) {
+        alert(`Simulating ${action}. Add actual ${action} logic here.`);
+    }
+});
+ChatGPT
+Your code seems well-organized and follows best practices. However, to ensure that your code meets the assignment requirements, let's review the rubric and see if there are any missing elements or areas for improvement.
+
+Responsive Design:
+
+You've implemented a responsive design with separate CSS files for mobile, tablet, and desktop. Ensure that your design is tested on different devices to confirm its responsiveness.
+Navigation:
+
+You have a navigation bar with links. Make sure the navigation is functional and properly links to the respective pages.
+Home Page (index.html):
+
+Verify that the home page contains featured artworks or content, and possibly a slogan. Check if the sections like "heat-this-week," "challenge-of-the-month," and "for-charity" are appropriately populated.
+Browse Page (browse.html):
+
+Ensure that the browse page includes a search bar and artistic keywords section with toggle buttons. Confirm that the buttons are working as expected.
+Post Page (post.html):
+
+Check if the post page has a form for uploading media. Ensure that the upload button and form are functioning.
+Profile Page (profile.html):
+
+Verify that the user profile section is present on the profile page. Ensure that the login and signup sections are functional with toggle buttons.
+JavaScript Functionality:
+
+Review your JavaScript code to confirm that the toggle buttons, navigation toggle, and form toggling functions are working correctly.
+Documentation:
+
+Add comments or documentation to explain complex sections of your code, especially in the JavaScript file. This will make it easier for others (and yourself) to understand the code in the future.
+Accessibility:
+
+Ensure that your website is accessible. Check for proper use of headings, alt attributes for images, and keyboard navigation.
+Cross-Browser Compatibility:
+
+Test your website on different browsers to ensure cross-browser compatibility.
+Error Handling:
+
+Implement error handling for form submissions and other critical user interactions.
+Security:
+
+Depending on the requirements, consider adding security measures, especially if your website involves user authentication or data submission.
+Testing:
+
+Perform thorough testing on different devices and browsers to identify any issues.
+Remember to address any specific requirements mentioned in your assignment rubric. Overall, your code looks well-structured and follows best practices, but always check against the specific criteria given in your assignment.
+
+User
+I forgot to include the requirements please correct the last answer:
+Overview:Within this project, you are combining all that we have learned about HMTL/CSS tocreate a multi-page responsive website. Multi-page responsive websites are the bread andbutter of the interactive industry. In this case, the content is up to you (as it does notdirectly connect with the learning of this course). You are required to use ChatGPT.You must include a table and a form on your website, on at least any one of your pages.This assignment is due on Tuesday, 12 March 2024.You can:Come up with a creative idea for EX (Space exposition, cooking, dinosaurs)Build a website for someone in your life (ask around, and you will find that a lot ofpeople want a site for their projects).Create a startup idea (find a topic that you are passionate about and build a website forit to build a community).Purpose & Process/Tips:This assignment is created to help you understand how to use CSS to make a websiteresponsive. One of the unique challenges for any web designer & developer is to be ableto make the content look good at all screen widths.I will not be looking specifically at design (ie, I will not be judging your colour scheme)but I will be looking for evidence that you are able to use CSS to execute your design (ie,if elements are not aligned but clearly should be, it shows a lack of control in CSS).Organization and maintainability are key considerations in this site. Remember thatwebsites are constantly being updated, often by multiple people. As you are buildingthis, ask yourself, if someone else needed to change this, would it be clear and easy forthem? Would a change have the correct corresponding change across pages/elements?Do not use templates, prebuilt layouts or other people's work. You must create a new,multipage, responsive design (i.e. you can’t use the same design from your previouswebsites or exercises)
+ChatGPT
+Thank you for providing the additional context. Let's review your code in light of the given requirements:
+
+Responsive Design:
+
+You have successfully implemented a responsive design with separate CSS files for mobile, tablet, and desktop.
+Navigation:
+
+The navigation bar is present and includes links to different pages.
+Table and Form:
+
+Ensure that at least one of your pages includes both a table and a form. It appears that the "Post Page" (post.html) includes a form. To meet the table requirement, you might consider adding a table to one of your pages, perhaps to display some data.
+Home Page (index.html):
+
+Verify that the home page contains featured artworks or content, and possibly a slogan. Check if the sections like "heat-this-week," "challenge-of-the-month," and "for-charity" are appropriately populated.
+Browse Page (browse.html):
+
+Confirm that the browse page includes a search bar and an artistic keywords section with toggle buttons. Ensure that the buttons are working as expected.
+Post Page (post.html):
+
+Confirm that the post page has a form for uploading media. Ensure that the upload button and form are functioning.
+Profile Page (profile.html):
+
+Verify that the user profile section is present on the profile page. Ensure that the login and signup sections are functional with toggle buttons.
+JavaScript Functionality:
+
+Review your JavaScript code to confirm that the toggle buttons, navigation toggle, and form toggling functions are working correctly.
+Documentation:
+
+Add comments or documentation to explain complex sections of your code, especially in the JavaScript file. This will make it easier for others (and yourself) to understand the code in the future.
+Accessibility:
+
+Ensure that your website is accessible. Check for proper use of headings, alt attributes for images, and keyboard navigation.
+Cross-Browser Compatibility:
+
+Test your website on different browsers to ensure cross-browser compatibility.
+Error Handling:
+
+Implement error handling for form submissions and other critical user interactions.
+Security:
+
+Depending on the requirements, consider adding security measures, especially if your website involves user authentication or data submission.
+Testing:
+
+Perform thorough testing on different devices and browsers to identify any issues.
+Original Work:
+
+Ensure that you have not used templates, prebuilt layouts, or other people's work. You must create a new, multipage, responsive design unique to this assignment.
+Review your code against these points to ensure that it meets all the specified requirements. If you address any potential issues, your project should align well with the given guidelines.
+
+User
+can you please make the keyowords in the browse page into a table
+ChatGPT
+Certainly! To transform the keywords in the browse page into a table, you can replace the existing keyword buttons with a table structure. Here's an example of how you can modify the HTML code:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Your head content here -->
+</head>
+
+<body>
+    <header>
+        <!-- Your header content here -->
+    </header>
+
+    <main>
+        <!-- Search Bar section -->
+        <section id="search-bar">
+            <!-- Your search bar content here -->
+        </section>
+
+        <!-- Artistic Keywords section with Table -->
+        <section id="artistic-keywords">
+            <h2>Artistic Keywords</h2>
+            <table>
+                <tr>
+                    <td><button class="keyword-button large" data-keyword="Abstract">Abstract</button></td>
+                    <td><button class="keyword-button large" data-keyword="Portrait">Portrait</button></td>
+                    <!-- Add more rows for additional keywords -->
+                </tr>
+                <tr>
+                    <td><button class="keyword-button" data-keyword="Photography">Photography</button></td>
+                    <td><button class="keyword-button" data-keyword="Surrealism">Surrealism</button></td>
+                    <!-- Add more rows for additional keywords -->
+                </tr>
+                <!-- Add more rows for additional rows of keywords -->
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Your footer content here -->
+    </footer>
+
+    <!-- Your JavaScript file and other scripts here -->
+</body>
+
+</html>
+This modification replaces the keyword buttons with table cells (<td>) inside rows (<tr>) within a <table> element. You can adjust the table structure based on your preference and add more rows for additional keywords.
+
+Remember to update the associated CSS styles accordingly if needed.
+
+User
+Can you please make the three sections side by side and give them a border?
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" media="screen and (max-width: 600px)" href="mobile.css">
+    <link rel="stylesheet" media="screen and (min-width: 601px) and (max-width: 1024px)" href="tablet.css">
+    <link rel="stylesheet" media="screen and (min-width: 1025px)" href="desktop.css">
+    <title>Whitespace - Home</title>
+</head>
+
+<body>
+    <header>
+        <!-- Centered title -->
+        <h1 id="site-title">Whitespace</h1>
+        
+        <!-- Navigation bar centered below the title -->
+        <nav>
+            <!-- Toggle button with Font Awesome icon -->
+            <button id="toggle-nav"><i class="fas fa-bars"></i></button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse.html">Browse</a></li>
+                <li><a href="post.html">Post</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Featured artworks or other content for the Home Page-->
+        <div id="featured-content">
+            <h1>Welcome</h1>
+            <!--Add slogan-->
+            <!--Add featured artworks or any introductory content here-->
+            <section class="content-boxes">
+                <section id="heat-this-week">
+                    <h2>Heat this week</h2>
+                </section>
+                <section id="challenge-of-the-month"> 
+                    <h2>Challenge of the month</h2>
+                </section>
+                <section id="for-charity"> 
+                    <h2>For charity</h2>
+                </section>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Footer content if needed -->
+        <p>&copy; 2024 mjc. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
+ChatGPT
+Certainly! You can use CSS Flexbox to arrange the three sections side by side and give them a border. Here's an updated version of your code with the modifications:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Your head content here -->
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        .content-boxes {
+            display: flex;
+            flex-direction: column;
+            border: 2px solid #333; /* Add your desired border style */
+            padding: 20px;
+            margin: 10px;
+        }
+
+        section {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f2f2f2;
+            color: #333;
+            font-size: x-small;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Your header content here -->
+    </header>
+
+    <main>
+        <!-- Featured artworks or other content for the Home Page-->
+        <div id="featured-content">
+            <h1>Welcome</h1>
+            <!--Add slogan-->
+            <!--Add featured artworks or any introductory content here-->
+            <section class="content-boxes">
+                <h2>Heat this week</h2>
+            </section>
+            <section class="content-boxes">
+                <h2>Challenge of the month</h2>
+            </section>
+            <section class="content-boxes">
+                <h2>For charity</h2>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Footer content if needed -->
+        <p>&copy; 2024 mjc. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
+In this example, I added a new CSS style block in the head to define the layout using Flexbox. The main element now uses display: flex to create a flex container, and each .content-boxes section has a border and padding. Adjust the border styles and padding values according to your design preferences.
+
+User
+/* styles.css */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* TITLE AND NAV MENU */
+/* ========================================================================================== */
+
+header {
+    text-align: center;
+    background-color: #f2f2f2;
+    color: #333;
+    padding: 1em;
+    width: 100%;
+}
+
+#site-title {
+    font-size: 2em;
+}
+
+nav ul {
+    list-style-type: none;
+    margin-top: 10px;
+    display: none;
+}
+
+#toggle-nav {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+}
+
+nav.active ul {
+    display: block;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+/***************************************HOME PAGE********************************************/
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* FEATURED CONTENT (SECTIONS, GRIDS) */
+/* ========================================================================================== */
+
+#featured-content {
+    text-align: center;
+    display: flex;
+    float: center;
+}
+
+.content_box {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #333; 
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px;
+    height: auto;
+    width: auto;
+}
+
+
+/* END OF FEATURED CONTENT (SECTIONS, GRIDS) */
+/* ========================================================================================== */
+
+/* END OF HOME PAGE */
+/* ******************************************************************************************** */
+
+/* BROWSE PAGE */
+/* SEARCH BAR */
+#search-bar {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+#search-input {
+    width: 300px;
+    padding: 10px;
+}
+
+#search-button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #555;
+}
+/* ================================== */
+
+/* KEYWORDS */
+#artistic-keywords {
+    text-align: center;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+
+input[type="checkbox"] {
+    margin: 0;
+}
+
+.toggle-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.keyword-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.keyword-button.very-large {
+    padding: 16px 32px;
+    font-size: 24px;
+}
+
+.keyword-button.large {
+    padding: 14px 28px;
+    font-size: 20px;
+}
+
+.keyword-button.medium {
+    padding: 12px 24px;
+    font-size: 16px;
+}
+
+.keyword-button.small {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.keyword-button.tiny {
+    padding: 8px 16px;
+    font-size: 12px;
+}
+
+.keyword-button:hover {
+    background-color: #2980b9;
+}
+
+.keyword-button.selected {
+    background-color: #2980b9;
+    color: #fff;
+}
+/* ===================================== */
+
+/* END OF BROWSE PAGE */
+/* ******************************************************************************************** */
+
+
+/* POST PAGE */
+#post-form {
+    text-align: center;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form input,
+form textarea,
+form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.icon-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 20px;
+    transition: background-color 0.3s;
+}
+
+.icon-button:hover {
+    background-color: #555;
+}
+/* END OF POST PAGE */
+/* ****************************************************************************************** */
+
+
+/* PROFILE PAGE */
+#user-profile {
+    text-align: center;
+    color: #333;
+}
+
+#user-profile h2 {
+    margin-bottom: 20px;
+}
+
+#login-signup {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+.form-container {
+    display: none;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.center-input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.buttons-container {
+    margin-top: 15px;
+}
+
+.form-container.active {
+    display: block;
+}
+
+#show-login,
+#show-signup {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+/* END OF PROFILE PAGE */
+/* ****************************************************************************************** */
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f2f2f2;
+    color: #333;
+    font-size: x-small;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" media="screen and (max-width: 600px)" href="mobile.css">
+    <link rel="stylesheet" media="screen and (min-width: 601px) and (max-width: 1024px)" href="tablet.css">
+    <link rel="stylesheet" media="screen and (min-width: 1025px)" href="desktop.css">
+    <title>Whitespace - Home</title>
+</head>
+
+<body>
+    <header>
+        <!-- Centered title -->
+        <h1 id="site-title">Whitespace</h1>
+        
+        <!-- Navigation bar centered below the title -->
+        <nav>
+            <!-- Toggle button with Font Awesome icon -->
+            <button id="toggle-nav"><i class="fas fa-bars"></i></button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse.html">Browse</a></li>
+                <li><a href="post.html">Post</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Welcome</h1>
+        <!-- Featured artworks or other content for the Home Page-->
+        <div id="featured-content">
+            <!--Add slogan-->
+            
+            <!-- HEAT THIS WEEK CONTENT BOX -->
+            <section class="content_box">
+                <h2>Heat this week</h2>
+                    <div id="content-container-1">
+                        <figure class="box_item box_item_1">
+                            <img src="https://placehold.jp/100x250.png" class="box_img" alt="100x250">
+                        </figure>
+                        <figure class="box_item box_item_2">
+                            <img src="https://placehold.jp/150x150.png" class="box_img" alt="150x150">
+                        </figure>
+                    </div>
+                
+            </section>
+            <!--******************************-->
+
+            <!-- CHALLENGE OF THE MONTH CONTENT BOX -->
+            <section class="content_box">
+                <h2>Challenge of the month</h2>
+                    <div id="content-container-2">
+                        <figure class="box_item box_item_2">
+                            <img src="https://placehold.jp/150x150.png" class="box_img" alt="150x150">
+                        </figure>
+                    </div>
+            </section>
+            <!--******************************-->
+
+            <!-- FOR CHARITY CONTENT BOX -->
+            <section class="content_box">
+                <h2>For charity</h2>
+                <div id="content-container-3">
+                    <figure class="box_item box_item_2">
+                        <img src="https://placehold.jp/600x400.png" class="box_img" alt="600x400">
+                    </figure>
+                </div>
+            </section>
+            <!--******************************-->
+
+        </div>
+    </main>
+
+    <footer>
+        <!-- Footer content if needed -->
+        <p>&copy; 2024 mjc. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+Please make it so that the featured content containers are always centered in the screen automatically even with different sizes of content within them
+ChatGPT
+Certainly! To ensure that the featured content containers are always centered on the screen, you can make a few adjustments to the CSS. I've modified your code accordingly:
+
+css
+Copy code
+/* styles.css */
+
+/* ... (your existing styles) */
+
+/* FEATURED CONTENT (SECTIONS, GRIDS) */
+/* ========================================================================================== */
+
+#featured-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+    justify-content: center; /* Center the content vertically */
+}
+
+.content_box {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #333; 
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px;
+    max-width: 400px; /* Adjust the maximum width as needed */
+    width: 100%;
+}
+
+/* END OF FEATURED CONTENT (SECTIONS, GRIDS) */
+/* ========================================================================================== */
+With these modifications, the #featured-content container is set to be a flex container with flex-direction: column and align-items: center to center its children horizontally, and justify-content: center to center its children vertically. The .content_box class also has max-width set to limit its width while still allowing it to be responsive.
+
+Feel free to adjust the max-width value to fit your design preferences. This will keep the featured content containers centered on the screen, regardless of the size of the content within them.
+
+User
+this made the boxes on top of each other i want them side to side
+ChatGPT
+I apologize for the confusion. If you want the content boxes to be side by side, you can modify the CSS for the .content_box class to use flexbox for the horizontal layout. Here's the updated CSS:
+
+css
+Copy code
+/* styles.css */
+
+/* ... (your existing styles) */
+
+/* FEATURED CONTENT (SECTIONS, GRIDS) */
+/* ========================================================================================== */
+
+#featured-content {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+}
+
+.content_box {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #333; 
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px;
+    max-width: 400px; /* Adjust the maximum width as needed */
+    width: 100%;
+}
+
+/* END OF FEATURED CONTENT (SECTIONS, GRIDS) */
+/* ========================================================================================== */
+Now, with flex-wrap: wrap; on #featured-content, the content boxes will be side by side, and if there's not enough space, they will wrap to the next line. This should give you the desired side-by-side layout for the content boxes.
+
+User
+please make it so that when i resize my window to the size of a mobile screen the content changes sizes and moves to fit on the screen
+ChatGPT
+To make the content responsive and adjust its size and layout for mobile screens, you can add some media queries to your existing CSS. Here's an example of how you can modify your styles:
+
+css
+Copy code
+/* styles.css */
+
+/* ... (your existing styles) */
+
+/* FEATURED CONTENT (SECTIONS, GRIDS) */
+/* ========================================================================================== */
+
+#featured-content {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+}
+
+.content_box {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #333; 
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px;
+    max-width: 400px; /* Adjust the maximum width as needed */
+    width: 100%;
+}
+
+/* Media Query for Tablet Screens (601px to 1024px) */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .content_box {
+        max-width: 600px; /* Adjust the maximum width for tablet screens */
+    }
+}
+
+/* Media Query for Mobile Screens (up to 600px) */
+@media screen and (max-width: 600px) {
+    #featured-content {
+        flex-direction: column; /* Stack content vertically on smaller screens */
+    }
+
+    .content_box {
+        max-width: 100%; /* Allow content to take full width on smaller screens */
+    }
+}
+
+/* END OF FEATURED CONTENT (SECTIONS, GRIDS) */
+/* ========================================================================================== */
+This includes two media queries: one for tablet screens (601px to 1024px) and one for mobile screens (up to 600px). Adjust the max-width values inside the media queries based on your design preferences. This should help the content adjust its size and layout when the window is resized to different screen sizes.
