@@ -80,6 +80,7 @@ main {
    
 }
 
+
 .content_box {
     display: flex;
     flex-direction: column;
@@ -91,6 +92,23 @@ main {
     width: auto;
 }
 
+/* Media Query for Tablet Screens (601px to 1024px) */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .content_box {
+        max-width: 600px; /* Adjust the maximum width for tablet screens */
+    }
+}
+
+/* Media Query for Mobile Screens (up to 600px) */
+@media screen and (max-width: 600px) {
+    #featured-content {
+        flex-direction: column; /* Stack content vertically on smaller screens */
+    }
+
+    .content_box {
+        max-width: 100%; /* Allow content to take full width on smaller screens */
+    }
+}
 
 /* END OF FEATURED CONTENT (SECTIONS, GRIDS) */
 /* ========================================================================================== */
